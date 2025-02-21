@@ -1,0 +1,136 @@
+.create-event {
+  min-height: 100vh;
+  display: grid;
+  place-items: start center; /* Align content at the top */
+  padding: 1rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  overflow-y: auto; /* Allow scrolling */
+}
+
+.create-event-form {
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  height: auto; /* Allow form content to stretch */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.create-event-form h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.user-event h3,
+.user-event p {
+    font-size: 18px; /* Increase font size */
+    color: white; /* Set text color to white */
+}
+
+.user-events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.user-event {
+    width: 23.5%;
+    margin-bottom: 10px; /* Added spacing between items */
+    box-sizing: border-box; /* Ensure padding and borders don't affect width */
+}
+
+.create-event-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.create-event-form input,
+.create-event-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.create-event-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.create-event-form input:focus,
+.create-event-form textarea:focus {
+  outline: none;
+  border-color: #4facfe;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.create-event-form input::placeholder,
+.create-event-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.create-event-form button {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.create-event-form button:hover {
+  transform: translateY(-2px);
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #4facfe;
+  border-radius: 50%;
+  margin: 0.5rem auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.create-event-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.6;
+}
+
+.create-event-form input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.create-event-form input[type="number"]::-webkit-outer-spin-button,
+.create-event-form input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+@media (max-width: 480px) {
+  .create-event-form {
+    padding: 1.5rem;
+  }
+  
+  .create-event-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,229 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Main container */
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(
+        45deg, 
+        #FF6B6B,
+        #4ECDC4,
+        #45B7D1,
+        #6c5ce7
+    );
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    padding: 20px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+/* Welcome section styles */
+.signup-container > div:first-child {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.signup-container > div:first-child img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signup-container > div:first-child img:hover {
+    transform: scale(1.08) rotate(5deg);
+    border-color: #4ECDC4;
+}
+
+.signup-container h2 {
+    color: #ffffff;
+    font-size: 2em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Signup card styles */
+.signup-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.signup-card h3 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: 700;
+}
+
+.signup-card h3:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #FF6B6B, #4ECDC4);
+    border-radius: 2px;
+}
+
+/* Form styles */
+.signup-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-card form input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.4s ease;
+    box-sizing: border-box;
+    color: #f6f9f9;
+    font-weight: 500;
+}
+
+.signup-card form input:focus {
+    border-color: #4ECDC4;
+    box-shadow: 0 0 0 4px rgba(78, 205, 196, 0.1);
+    transform: translateY(-2px);
+}
+
+.signup-card form button {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+}
+
+.signup-card form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(45deg, #4ECDC4, #FF6B6B);
+}
+
+/* Additional info section */
+.signup-card p {
+    margin-top: 20px;
+    color: #34495e;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.signup-card a {
+    color: #FF6B6B;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.signup-card a:hover {
+    color: #4ECDC4;
+}
+
+/* Loading states */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #4ECDC4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #95a5a6;
+    opacity: 0.8;
+    font-weight: 400;
+}
